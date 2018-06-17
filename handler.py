@@ -8,7 +8,9 @@ RASASERVER_URL = "http://ec2-34-218-219-244.us-west-2.compute.amazonaws.com:5000
 #All functions available to VoiceOS.
 FUNCTIONS_DICT = {
     "catAppOnStart": "aws-python-simple-http-endpoint-dev-CatAppOnStart",
-    "catAppHandle": "aws-python-simple-http-endpoint-dev-CatAppHandle"
+    "catAppHandle": "aws-python-simple-http-endpoint-dev-CatAppHandle",
+    "VoiceNotesOnStart": "aws-python-simple-http-endpoint-dev-VoiceNotesOnStart",
+    "VoiceNotesHandle": "aws-python-simple-http-endpoint-dev-VoiceNotesHandle"
 }
 
 #Given intent, returns app name
@@ -18,7 +20,7 @@ AppNameFromIntent = {
     "home": None,
     "image search":  "imageSearch",
     "voicetunnel": "voicetunnel",
-    "notes": "notes"
+    "voice notes": "VoiceNotes"
 }
 
 def isPostRequest(event):
@@ -85,12 +87,13 @@ def wrapIntentSpeakAction(spokenPhrase, sender):
 def wrapResponse(payload, receiver):
     return {"payload":payload, "receiver":receiver}
 
-def testCatappResponse(rasaJson,sender):
-    parsedResponse = callCatApp()
-    print('parsedResponse:',parsedResponse)
-    responseBody = wrapResponse(callCatApp(), sender)
-    print('responseBody:',responseBody)
-    return response
+# TODO: implement callCatApp() function
+# def testCatappResponse(rasaJson,sender):
+#     parsedResponse = callCatApp()
+#     print('parsedResponse:',parsedResponse)
+#     responseBody = wrapResponse(callCatApp(), sender)
+#     print('responseBody:',responseBody)
+#     return response
 
 def switchBetweenApp():
     print('switchBetweenApp')

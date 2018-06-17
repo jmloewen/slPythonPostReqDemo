@@ -4,7 +4,8 @@
   "description": "Example demonstrates how to setup a simple HTTP GET endpoint with python",
   "author": "",
   "license": "MIT",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "serverless-python-requirements": "^3.3.1"
   }
 }
